@@ -1,22 +1,22 @@
 import welcome
 import search
-import test1
+import handleUserTable
 import test2
 import test3
 import test4
 import test6
 import test7_9
-welcome.welcome()
+# welcome.welcome()
 choose='-1'   # 实现子功能的循环执行
 while 1:
     if choose=='-1':    # 子功能不循环执行
         print('''
                        1.查询操作(单表查询、复杂查询)
-                       2.建立新表/删除新表(管理员用户/学生用户表)
-                       2.插入学生数据/选课信息/管理员用户/学生用户
+                       2.建立新表/删除新表(管理员用户/普通用户表)
+                       2.插入学生数据/选课信息/管理员用户/普通用户
                        3.更改学生专业信息/成绩信息/用户密码
-                       4.删除学生相关信息/学生用户/登录用户
-                       '''
+                       4.删除学生相关信息/管理员用户/普通用户
+                  '''
               )
         choose=input("输入要选择的功能")
 
@@ -36,7 +36,19 @@ while 1:
         if b!=0:
             continue
     elif choose == '2':
-        test2.test1()
+        print("        建表/删表子界面（管理员用户表与普通用户表）")
+        print("          ========================")
+        print('''
+                   1.建表
+                   2.删表
+                   ''')
+        a = eval(input())
+        if a==1:
+            adminOrPutong=eval(input("新建哪个表？ 1：管理员 2:普通用户"))
+            handleUserTable.createUserTable(adminOrPutong)
+        if a==2:
+            adminOrPutong = eval(input("删除哪个表？ 1：管理员 2:普通用户"))
+            handleUserTable.dropUserTable(adminOrPutong)
     elif choose == '3':
         test3.test1()
     elif choose=='4':

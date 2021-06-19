@@ -12,7 +12,8 @@ def createUserTable(choose):
     str1="""create table %s(
        username varchar(20) not null,
        password varchar(20),
-        PRIMARY KEY (username)
+       phonenum varchar(20),
+        PRIMARY KEY (username,password)
     )"""%(table)
     print(str1)
     cursor.execute(str1)
@@ -41,7 +42,8 @@ def insertUser(choose):
         table = 'putongUser'
     username=input("输入用户名")
     password=input("输入密码")
-    str1='''insert into %s values ("%s","%s")'''%(table,username,password)
+    phonenum=input("输入电话号")
+    str1='''insert into %s values ("%s","%s","%s")'''%(table,username,password,phonenum)
     cursor.execute(str1)
     db.commit()
     print("执行成功")
