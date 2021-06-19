@@ -2,7 +2,7 @@ import db
 db = db.db()
 cursor = db.cursor()
 def welcome():
-    a=eval(input("请先登陆：输入1 管理员用户登录，输入2 普通用户登录"))
+    a=eval(input("请先登陆：输入1 管理员用户登录，输入2 普通用户登录:"))
     if a==1:
         table='adminUser'
     if a==2:
@@ -24,4 +24,5 @@ def welcome():
             print("输入错误")
             continue
         continue
+        return a
 # welcome()
