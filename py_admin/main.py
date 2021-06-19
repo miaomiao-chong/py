@@ -1,5 +1,6 @@
 import welcome
 import search
+import  insert
 import handleUserTable
 import test2
 import test3
@@ -13,9 +14,9 @@ while 1:
         print('''
                        1.查询操作(单表查询、复杂查询)
                        2.建立新表/删除新表(管理员用户/普通用户表)
-                       2.插入学生数据/选课信息/管理员用户/普通用户
-                       3.更改学生专业信息/成绩信息/用户密码
-                       4.删除学生相关信息/管理员用户/普通用户
+                       3.插入学生数据/选课信息/管理员用户/普通用户
+                       4.更改学生专业信息/成绩信息/用户密码
+                       5.删除学生相关信息/管理员用户/普通用户
                   '''
               )
         choose=input("输入要选择的功能")
@@ -50,7 +51,18 @@ while 1:
             adminOrPutong = eval(input("删除哪个表？ 1：管理员 2:普通用户"))
             handleUserTable.dropUserTable(adminOrPutong)
     elif choose == '3':
-        test3.test1()
+        print("                插入操作子界面")
+        print("            ========================")
+        print('''
+                          1.增加学生数据
+                          2.增加选课信息
+                          3.增加管理员用户
+                          4.增加普通用户
+                          ''')
+        a = eval(input())
+        b = insert.insert(a)
+        if b != 0:
+            continue
     elif choose=='4':
         test4.test1()
     elif choose == '5':
