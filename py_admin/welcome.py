@@ -1,5 +1,5 @@
 def welcome():
-    print("请先登陆（admin 111111）")
+    print("请先登陆（目前仅限管理员登录）")
     while 1:
         user=input("输入用户名")
         pwd=input("输入密码")
