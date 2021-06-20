@@ -164,7 +164,7 @@ def search(a):
     elif a==7:
         dayinAll()
     while 1:
-        print("执行成功")
+        # print("执行成功")
         res = cursor.fetchone()
         if res is None:
             break

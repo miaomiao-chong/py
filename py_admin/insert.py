@@ -8,6 +8,7 @@ def insertstu():
     query='insert into stu values(%d,"%s","%s","%s","%s","%s",%d,%d)'%(data)
     print(query)
     cursor.execute(query)
+    db.commit()
     print("执行成功")
 def insertCourse():
     sno = input("输入学号：")
@@ -16,6 +17,7 @@ def insertCourse():
     sql = "insert into sc values(%s,%s,%s)"%(sno,cno,grade)
     # query = 'insert into sc values(1052,500002,85)'
     cursor.execute(sql)
+    db.commit()
     print("执行成功")
 def insert(a):
     if a == 1:

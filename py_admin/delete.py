@@ -12,8 +12,7 @@ def delete(a):
     if a==1:
         deleteStu()
     if a==2:
-        handleUserTable.updateStuGrade(2)
-    if a==3:
         handleUserTable.deleteUser(1)
-    if a == 4:
+    if a==3:
         handleUserTable.deleteUser(2)
+
